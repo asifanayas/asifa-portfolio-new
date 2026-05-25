@@ -1,0 +1,239 @@
+/* ── STATS ───────────────────────────────────── */
+.pmv-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.pmv-stat {
+  background: var(--navy-mid);
+  border: 1px solid rgba(184, 200, 232, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: center;
+  transition: var(--transition);
+}
+
+.pmv-stat:hover {
+  border-color: rgba(201, 168, 76, 0.2);
+}
+
+.pmv-stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+}
+
+.pmv-stat-label {
+  font-size: 0.78rem;
+  font-family: var(--font-mono);
+  color: var(--white-dim);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── PROGRESS ────────────────────────────────── */
+.pmv-progress {
+  height: 3px;
+  background: rgba(184, 200, 232, 0.1);
+  border-radius: 2px;
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.pmv-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  border-radius: 2px;
+  transition: width 0.8s ease;
+}
+
+/* ── CONTROLS ────────────────────────────────── */
+.pmv-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.pmv-filters {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.pmv-filter-btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  border: 1px solid rgba(184, 200, 232, 0.15);
+  background: transparent;
+  color: var(--white-dim);
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  transition: var(--transition);
+}
+
+.pmv-filter-btn:hover {
+  border-color: rgba(201, 168, 76, 0.3);
+  color: var(--white);
+}
+
+.pmv-filter-btn.active {
+  background: rgba(201, 168, 76, 0.12);
+  border-color: rgba(201, 168, 76, 0.4);
+  color: var(--gold);
+}
+
+/* ── TIMELINE ────────────────────────────────── */
+.pmv-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pmv-entry {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 1rem;
+  position: relative;
+}
+
+.pmv-entry-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.pmv-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+  animation: pulse-gold 2s infinite;
+  z-index: 1;
+}
+
+.pmv-line {
+  flex: 1;
+  width: 1px;
+  background: rgba(184, 200, 232, 0.1);
+  margin: 0.5rem 0;
+  min-height: 24px;
+}
+
+.pmv-entry-card {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pmv-entry-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pmv-week {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.pmv-entry-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.pmv-entry-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.pmv-status {
+  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.pmv-date {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--white-dim);
+}
+
+.pmv-learned {
+  background: rgba(6, 13, 31, 0.5);
+  border-left: 2px solid var(--gold-dim);
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+}
+
+.pmv-learned-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.pmv-learned p {
+  font-size: 0.875rem;
+  color: var(--white-dim);
+  line-height: 1.65;
+}
+
+.pmv-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pmv-entry-actions {
+  display: flex;
+  gap: 0.4rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid rgba(184, 200, 232, 0.06);
+}
+
+/* ── RESPONSIVE ──────────────────────────────── */
+@media (max-width: 600px) {
+  .pmv-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pmv-entry-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .pmv-entry-meta {
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
